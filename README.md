@@ -8,7 +8,7 @@
 
 |Nom|Prénom|login|email|
 |--|--|--|--|
-| ... | ... | ... | ... |
+| KHADDOR | EL MEHDI | KE223365 | el-mehdi.khaddor@etu.univ-lehavre.fr |
 
 See <https://pigne.org/teaching/webdev1/lab/object-model-lab> for instructions.
 

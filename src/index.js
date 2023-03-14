@@ -1,4 +1,6 @@
+import { readFileSync } from 'fs';
 export const version = () => '1.0.0';
+
 
 /* TODO : Créer le modèle objet ici */
 
@@ -56,4 +58,27 @@ export class SWITCH extends Sensor{constructor(id, name, data){super(id, name, d
 export class DOOR extends Sensor{constructor(id, name, data){super(id, name, data)}}
 
 
+/**
+ *  export function createSensor(sensor){
+    switch(sensor.type){
+        case 'TEMPERATURE' : return new TEMPERATURE(sensor.id, sensor.name, sensor.data); 
+        case 'HUMIDITY' : return new HUMIDITY(sensor.id, sensor.name, sensor.data);
+        case 'LIGHT' : return new LIGHT(sensor.id, sensor.name, sensor.data);
+        case 'SWITCH' : return new SWITCH(sensor.id, sensor.name, sensor.data);
+        case 'DOOR' :return  new DOOR(sensor.id, sensor.name, sensor.data);
+    }
+}
+
+export function readJsonFile(){
+    
+    const sensors = []
+    
+    const jsonFile = readFileSync('./resources/sensors_data.json');
+    const jsonObject = JSON.parse(jsonFile);
+
+    for(let i =0; i < jsonObject.length; i++){
+        sensors[i] = createSensor(jsonObject[i]);
+    }
+}
+**/
 
