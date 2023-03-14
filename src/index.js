@@ -3,11 +3,11 @@ export const version = () => '1.0.0';
 /* TODO : Créer le modèle objet ici */
 
 
-class Data {
+export class Data {
     constructor(){}
 }
 
-class TimeSeries extends Data {
+export class TimeSeries extends Data {
     constructor(values, labels){
         super()
         this.values = values;
@@ -21,7 +21,7 @@ class TimeSeries extends Data {
     getLabels(){return this.labels;}
 }
 
-class Datum extends Data {
+export class Datum extends Data {
     constructor(value){
         super();
         this.value = value;
@@ -32,14 +32,14 @@ class Datum extends Data {
 
 }
 
-class Sensor {
+export class Sensor {
 
     constructor(id, name, data){
         this.id = id;
         this.name = name;
         if(data.values != null){
-            data = new TimeSeries(data.values, data.labels);
-        }else{ data = new Datum(data.value)}
+            this.data = new TimeSeries(data.values, data.labels);
+        }else{ this.data = new Datum(data.value)}
     }
 
     setId(id){this.id = id;}
@@ -49,11 +49,11 @@ class Sensor {
     getName(){return this.name}
 }
 
-class TEMPERATURE extends Sensor{constructor(id, name, data){super(id, name, data)}}
-class HUMIDITY extends Sensor{constructor(id, name, data){super(id, name, data)}}
-class LIGHT extends Sensor{constructor(id, name, data){super(id, name, data)}}
-class SWITCH extends Sensor{constructor(id, name, data){super(id, name, data)}}
-class DOOR extends Sensor{constructor(id, name, data){super(id, name, data)}}
+export class TEMPERATURE extends Sensor{constructor(id, name, data){super(id, name, data)}}
+export class HUMIDITY extends Sensor{constructor(id, name, data){super(id, name, data)}}
+export class LIGHT extends Sensor{constructor(id, name, data){super(id, name, data)}}
+export class SWITCH extends Sensor{constructor(id, name, data){super(id, name, data)}}
+export class DOOR extends Sensor{constructor(id, name, data){super(id, name, data)}}
 
 
 
